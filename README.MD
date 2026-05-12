@@ -1,6 +1,27 @@
 # Flatlist behind the scenes
 
 ## OnScroll
+- IOS components
+    - UIScrollView
+- Android Components
+    - RecyclerView
+    - NestedScrollView
+    - ScrollView
+
+````
+user move
+      ↓
+UIScrollView / RecyclerView
+      ↓
+native calculates position
+      ↓
+scroll event
+      ↓
+bridge / JSI
+      ↓
+onScroll no JS
+````
+
 ```javascript
 onScroll={(event) => {
   console.log(event.nativeEvent);
@@ -47,7 +68,7 @@ onScroll={(event) => {
 }
 ```
 
-- Calculo
+- Calculation
 ```javascript
 distanceFromEnd = contentSize.height - layoutMeasurement.height - contentOffset.y
 ```
@@ -65,3 +86,4 @@ onEndReached={(info) => {
 threshold = layoutMeasurement.height * 0.5
 onEndReachedThreshold={0.5}
 ```
+
