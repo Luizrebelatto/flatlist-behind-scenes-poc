@@ -16,6 +16,10 @@ export default function App() {
         onScroll={(event) => {
           console.log(event.nativeEvent);
         }}
+        onEndReached={(info) => {
+          console.log('onEndReached:', info);
+        }}
+        onEndReachedThreshold={0.5}
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Text style={styles.title}>{item.title}</Text>

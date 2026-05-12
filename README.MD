@@ -51,3 +51,17 @@ onScroll={(event) => {
 ```javascript
 distanceFromEnd = contentSize.height - layoutMeasurement.height - contentOffset.y
 ```
+
+## onEndReached
+
+```javascript
+onEndReached={(info) => {
+    console.log('onEndReached:', info);
+}}
+```
+
+- If you want a customizable distance, you can use this property:
+```javascript
+threshold = layoutMeasurement.height * 0.5
+onEndReachedThreshold={0.5}
+```
