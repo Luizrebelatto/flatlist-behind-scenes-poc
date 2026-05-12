@@ -13,6 +13,9 @@ export default function App() {
       <FlatList
         data={DATA}
         keyExtractor={(item) => item.id}
+        onScroll={(event) => {
+          console.log(event.nativeEvent);
+        }}
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Text style={styles.title}>{item.title}</Text>
