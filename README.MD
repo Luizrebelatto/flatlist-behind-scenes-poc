@@ -87,3 +87,9 @@ threshold = layoutMeasurement.height * 0.5
 onEndReachedThreshold={0.5}
 ```
 
+## TimeStamp 
+- to get velocity
+```
+velocity = (currentOffsetY - previousOffsetY) / (currentTimestamp - previousTimestamp)
+```
+
